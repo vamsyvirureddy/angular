@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="manikanta.css">
+<script src="lib/angular.min.js"></script>
+</head>
+<body>
+<header id="top_header">
+<h1>UX Society Members</h1>
+</header>
+<nav id="top_nav">
+<input type="text" name="search" placeholder="Search..">
+</nav>
+<div ng-app= "myApp" ng-controller="customersCrtl">
+	 <div id="new_div">
+	 
+	<section id="main_section">
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Occupation</th>
+<th>Company</th>
+</tr>
+<tr ng-repeat="x in names">
+<td>{{x.firstName}}{{x.middleInitial}}{{x.surname}}</td>
+<td>{{x.occupation}}</td>
+<td>{{x.company}}</td>
+</tr>
+</table>
+</section>
+</div>
+<script>
+var app=angular.module('myApp',[]);
+
+app.controller('customersCtrl', function($scope, $http) {
+$http.get("data.json")
+.then(function(response){$scope.names=response.records});
+});
+
+</script>
+</body>
+
+</html>

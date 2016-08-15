@@ -1,0 +1,29 @@
+*{
+margin:0px;
+padding:0px;
+}
+body{
+	text-align:center;
+}
+#top_header{
+	border: 20px top black;
+	background:grey;
+	padding:5px;
+	color: lightblue;
+	
+}
+#top_nav{
+width=1000px;
+margin:20px;
+}
+table{
+	width:1000px;
+	height:300px;
+	align:center;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
